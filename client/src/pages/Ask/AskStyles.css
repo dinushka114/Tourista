@@ -1,0 +1,14 @@
+.forum{
+    margin-top: 180px;
+}
+
+.forum_title{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+.forum_title h1{
+    margin-right: 20px;
+}
