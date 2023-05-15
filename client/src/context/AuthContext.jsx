@@ -22,11 +22,26 @@ export function AuthProvider({ children }) {
         return res;
     }
 
+    const checkAdminAuth=()=>{
+        var res = false;
+
+        try{
+            const user = JSON.parse(localStorage.getItem("admin"));
+            var token = user.token;
+            var decoded = jwt_decode(token);
+            res = true;
+        }catch(err){
+            res = false;
+        }
+    
+        return res;
+    }
+
 
 
 
     return (
-        <AuthContext.Provider value={{checkAuth}}>{children}</AuthContext.Provider>
+        <AuthContext.Provider value={{checkAuth , checkAdminAuth}}>{children}</AuthContext.Provider>
     )
 }
 

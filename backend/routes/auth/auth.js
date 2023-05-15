@@ -17,13 +17,23 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-router.post('/register-user' , upload.single("avatar"), async (req,res)=>{
-    await userSignUp(req , "User" , res)
+router.post('/login-admin', async (req, res) => {
+    await userLogin(req.body, "Admin", res)
 })
 
-router.post('/login-user' , async(req,res)=>{
-    await userLogin(req.body , "User" , res);
+router.post('/register-user', upload.single("avatar"), async (req, res) => {
+    await userSignUp(req, "User", res)
 })
+
+router.post('/register-admin', async (req, res) => {
+    await userSignUp(req, "Admin", res)
+})
+
+router.post('/login-user', async (req, res) => {
+    await userLogin(req.body, "User", res);
+})
+
+
 
 
 

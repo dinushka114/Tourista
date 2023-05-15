@@ -49,6 +49,7 @@ const SignUp = () => {
   const handleSignUp = async (e) => {
     e.preventDefault()
 
+    // setErrors({})
 
     setErrors(validation(values))
 
@@ -85,14 +86,11 @@ const SignUp = () => {
 
         <div class="avatar-upload" id="profile-img">
           <div class="avatar-edit">
-            {/* <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" /> */}
-            {/* <label for="imageUpload">+</label> */}
+
           </div>
-          {/* <div class="avatar-preview">  */}
-          {/* <div id="imagePreview" style={{ backgroundImage: `url(${avatar})` }}> */}
+
           <Skeleton style={{ lineHeight: '10', borderRadius: '50%', height: '180px', width: '180px' }} />
-          {/* </div> */}
-          {/* </div> */}
+
         </div>
         <Skeleton style={{ lineHeight: '5' }} /> <br />
         <Skeleton style={{ lineHeight: '5' }} /> <br />

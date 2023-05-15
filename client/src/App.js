@@ -10,6 +10,8 @@ import Ask from './pages/Ask/Ask';
 import PlanTrip from './pages/PlanTrip/PlanTrip';
 import MyTrips from './pages/MyTrips/MyTrips';
 import TripDetails from './pages/TripDetails/TripDetails';
+import Admin from './pages/Admin/AdminHome/Admin';
+import AdminLogin from './pages/Admin/AdminLogin/AdminLogin';
 
 function App() {
   return (
@@ -23,7 +25,11 @@ function App() {
         <Route path='/ask/*' element={<Ask />} />
         <Route path='/plan-trip/*' element={<PlanTrip />} />
         <Route path='/trip/:id' element={<TripDetails />} />
-        
+
+        <Route path='/admin/*' element={<Admin />} />
+        <Route path='/admin/login' element={<AdminLogin />} />
+
+
       </Routes>
     </div>
   );

@@ -109,12 +109,17 @@ const QuizDiscussBox = () => {
     }
 
     const checkCurrentUserAndQuizUser = () => {
+        var result = false;
         try {
             const currentUserEmail = JSON.parse(localStorage.getItem("user")).email
-            return currentUserEmail == quiz.user;
-        }catch(err){
-            return false
+            if (currentUserEmail == quiz.user) {
+                result = true
+            }
+        } catch (err) {
+            result = false
         }
+
+        return result
     }
 
     const showUpdatingSkelton = () => {
@@ -204,6 +209,5 @@ const QuizDiscussBox = () => {
         </>
     )
 }
-
 
 export default QuizDiscussBox
