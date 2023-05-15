@@ -1,15 +1,38 @@
 const bcrypt = require('bcrypt');
+const { Storage } = require('@google-cloud/storage')
 const User = require("../../database/models/User");
+
+const storage = new Storage({
+    keyFilename: `./touristaapi-c00e6b63ba16.json`,
+})
+
+const bucketName = 'profile-images-bucket'
+const bucket = storage.bucket(bucketName)
 
 const userSignUp = async (req, role, res) => {
     try {
 
-        let avatar = "http://localhost:3001/uploads/";
+        let avatar = "https://touristaapi.de.r.appspot.com/uploads/";
 
         if (req.file) {
             avatar += req.file.originalname;
+
+            // bucket.upload(req.file.path,
+            //     {
+            //         destination: `Images/${req.file.originalname}`
+            //     }, function (err, file) {
+            //         if (err) {
+            //             console.error(`Error uploading image image_to_upload.jpeg: ${err}`)
+            //         } else {
+            //             console.log(`Image image_to_upload.jpeg uploaded to ${bucketName}.`)
+            //         }
+            //     }
+
+            // )
+
         } else {
             avatar = "http://i.pravatar.cc/500?img=8";
+            
 
         }
 
@@ -62,4 +85,4 @@ const userSignUp = async (req, role, res) => {
     }
 }
 
-module.exports = {userSignUp}
+module.exports = { userSignUp }

@@ -1,0 +1,82 @@
+.my-trips {
+    margin-top: 180px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.my-trips h1{
+    /* text-align: center; */
+}
+
+.trip-top-search{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.trip-top-search input{
+    width: 50%;
+}
+
+:root {
+    --color-gray-90: hsl(0, 0%, 90%);
+    --color-gray-80: hsl(0, 0%, 80%);
+    --color-gray-50: hsl(0, 0%, 50%);
+    --color-light: hsl(0, 0%, 100%);
+    --font-size-initial: 15px;
+    --size-initial: 1px;
+}
+
+.my-trips main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(var(--font-size-initial) * 18), 1fr));
+    gap: calc(var(--font-size-initial) * 2);
+    margin: auto;
+    max-width: calc(var(--font-size-initial) * 80);
+    padding: calc(var(--font-size-initial) * 2);
+}
+
+.my-trips section {
+    background: var(--color-light);
+    border-radius: calc(var(--font-size-initial) * .5);
+    box-shadow: 0 calc(var(--size-initial) * 3) calc(var(--size-initial) * 6) hsla(0, 0%, 0%, .1);
+    overflow: hidden;
+}
+
+.my-trips article {
+    padding: calc(var(--font-size-initial) * 3);
+}
+
+.my-trips figure {
+    height: calc(var(--font-size-initial) * 15);
+}
+
+/* IMAGE */
+.my-trips img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* TYPOGRAPHY */
+.my-trips h3 {
+    font-size: calc(var(--font-size-initial) * 2);
+    letter-spacing: calc(var(--size-initial) * -1.25);
+    line-height: calc(var(--font-size-initial) * 2.25);
+    margin: calc(var(--font-size-initial) * .5) 0;
+}
+
+.my-trips p {
+    font-size: calc(var(--font-size-initial) * .875);
+    line-height: calc(var(--font-size-initial) * 1.25);
+}
+
+.my-trips span {
+    color: var(--color-gray-80);
+    font-size: calc(var(--font-size-initial) * .75);
+    letter-spacing: calc(var(--size-initial) * .75);
+    text-transform: uppercase;
+    word-spacing: var(--size-initial);
+}

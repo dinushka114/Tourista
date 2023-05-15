@@ -1,5 +1,8 @@
 .forum{
     margin-top: 180px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .forum_title{
@@ -11,4 +14,15 @@
 
 .forum_title h1{
     margin-right: 20px;
+}
+
+@media screen and (max-width:850px) {
+    .forum{
+        width: 90%;
+        
+    }
+
+    .forum h1{
+        font-size: 1.6rem;
+    }
 }

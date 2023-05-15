@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import AuthContext from '../../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
 import "./NavbarStyles.css";
 
 const Navbar = () => {
 
+    const { checkAuth } = useContext(AuthContext)
+
     const [clicked, setClicked] = useState(false);
+
+    const [isAuth, setAuth] = useState(checkAuth())
+
+    const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.removeItem("user")
+        navigate("/")
+    }
 
     return (
         <nav className='NavbarItems'>
@@ -22,14 +34,23 @@ const Navbar = () => {
                 <li >
                     <Link to={'/ask'} className='nav-links'><i class="fa-solid fa-circle-info"></i> Ask</Link>
                 </li>
-             
+
                 <li>
-                    <Link to={'/about'} className='nav-links'><i class="fa-sharp fa-solid fa-address-card"></i> About</Link>
+                    <Link to={'/my-trips'} className='nav-links'><i class="fa-solid fa-suitcase-rolling"></i>My Trips</Link>
                 </li>
-                <li>
-                    <Link to={'/signup'} className='nav-links-mobile'> Sign up</Link>
-                </li>
-                <Link to={'/signup'}><button id='sign_up_btn'>Sign up</button></Link>
+                {
+                    checkAuth() ? <li>
+                        <Link onClick={() => logout()} className='nav-links-mobile'> Sign out</Link>
+                    </li> : <li>
+                        <Link to={'/login'} className='nav-links-mobile'> Sign in</Link>
+                    </li>
+                }
+
+
+
+                {
+                    checkAuth() ? <button className='logout-btn' onClick={() => logout()}>Sign out</button> : <Link to={'/login'}><button id='sign_up_btn'>Sign in</button></Link>
+                }
             </ul>
         </nav>
     )

@@ -125,6 +125,10 @@ button:hover {
         display: none;
     }
 
+    .logout-btn{
+        display: none;
+    }
+
     .nav-links-mobile {
         display: block;
         text-align: center;

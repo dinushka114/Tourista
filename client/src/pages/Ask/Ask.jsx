@@ -5,28 +5,30 @@ import AvatarImg from "../../images/avatar.jpg";
 import "./AskStyles.css"
 import AskQuizForm from '../../components/AskQuizForm/AskQuizForm';
 import QuizDiscussBox from '../../components/QuizDiscussBox/QuizDiscussBox';
+import { Link, Route, Routes } from 'react-router-dom';
+import Footer from "../../components/Footer/Footer"
+import QuizAsked from '../../components/QuizAsked/QuizAsked';
 
 const Ask = () => {
 
-    const [open , setOpen] = useState(false)
-    const [openDiscuss , setOpenDiscuss] = useState(false)
+    const [open, setOpen] = useState(false)
 
     return (
         <div>
             <Navbar />
 
-            <div className='forum'>
-                <div className='forum_title'>
-                    <h1>Forum</h1>
-                    <button onClick={()=>setOpen(!open)}>Ask anything</button>
-                </div>
-                <AskQuizBox openDiscuss={openDiscuss} setOpenDiscuss={setOpenDiscuss} img={AvatarImg} />
+            <div className='forum' style={{ marginBottom: '40px' }}>
+
+                <Routes>
+                    <Route path='/' element={<QuizAsked />} />
+                    <Route path='/ask-quiz' element={<AskQuizForm />} />
+                    <Route path='/discuss/:id' element={<QuizDiscussBox />} />
+                </Routes>
+
             </div>
 
-            {
-                open ? <AskQuizForm open={open} setOpen={setOpen} /> : null
-            }
 
+            <Footer />
 
         </div>
     )

@@ -4,23 +4,26 @@ const AnswerQuizBox = (props) => {
     return (
         <div class="quiz_answer_container" style={quizBoxStyles}>
             <img style={avatarStyles} src={props.img} alt="Avatar" />
-            <p>Hello. How are you today?</p>
-            <span class="time-right">11:00</span>
+            <p>{props.answer}</p>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <span class="time-right">on <b>{props.date}</b></span>
+                <span>by <b>{props.by.split("@")[0]}</b> </span>
+            </div>
         </div>
     )
 }
 
-const quizBoxStyles={
+const quizBoxStyles = {
     // width: '100%',
     padding: '25px',
     border: 'none',
     fontSize: '1rem',
     borderRadius: '4px',
-    boxShadow: '0 5px 15px 0 rgba(0, 0, 0, .10)'   ,
-    cursor:'pointer'
+    boxShadow: '0 5px 15px 0 rgba(0, 0, 0, .10)',
+    cursor: 'pointer'
 }
 
-const avatarStyles={
+const avatarStyles = {
     float: 'left',
     maxWidth: '60px',
     width: '100%',

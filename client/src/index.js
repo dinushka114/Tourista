@@ -3,14 +3,23 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import { AuthProvider } from './context/AuthContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
+  <AuthProvider>
+    <SkeletonTheme baseColor="#f1f1f1">
+      <BrowserRouter>
+
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+
+      </BrowserRouter>
+    </SkeletonTheme>
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
