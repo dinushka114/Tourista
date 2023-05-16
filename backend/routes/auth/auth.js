@@ -3,26 +3,17 @@ const { userSignUp } = require("../../controllers/auth/register");
 const multer = require("multer");
 const { userAuth, checkRole } = require("../../middlewares");
 
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage }).single('avatar');
 const router = require("express").Router();
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "public/uploads");
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
-    },
-});
-
-const upload = multer({ storage: storage });
-
 
 router.post('/login-admin', async (req, res) => {
     await userLogin(req.body, "Admin", res)
 })
 
-router.post('/register-user', upload.single("avatar"), async (req, res) => {
-    await userSignUp(req, "User", res)
+router.post('/register-user', upload, async (req, res) => {
+    await userSignUp(req , "User", res)
 })
 
 router.post('/register-admin', async (req, res) => {

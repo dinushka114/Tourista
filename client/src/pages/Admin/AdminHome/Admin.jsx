@@ -23,7 +23,7 @@ const Admin = () => {
     <>
       <AdminNavBar />
       <Routes>
-        <Route path='/admin-blog' element={<AdminBlog />} />
+        <Route path='/admin-blog/*' element={<AdminBlog />} />
       </Routes>
     </>
   )

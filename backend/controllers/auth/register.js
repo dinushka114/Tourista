@@ -1,40 +1,38 @@
 const bcrypt = require('bcrypt');
-const { Storage } = require('@google-cloud/storage')
+
 const User = require("../../database/models/User");
 
-const storage = new Storage({
-    keyFilename: `./touristaapi-c00e6b63ba16.json`,
-})
+// const multer = require('multer');
 
-const bucketName = 'profile-images-bucket'
-const bucket = storage.bucket(bucketName)
+
 
 const userSignUp = async (req, role, res) => {
     try {
 
-        let avatar = "https://touristaapi.de.r.appspot.com/uploads/";
 
-        if (req.file) {
-            avatar += req.file.originalname;
+        let avatar = "http://i.pravatar.cc/500?img=8";
 
-            // bucket.upload(req.file.path,
-            //     {
-            //         destination: `Images/${req.file.originalname}`
-            //     }, function (err, file) {
-            //         if (err) {
-            //             console.error(`Error uploading image image_to_upload.jpeg: ${err}`)
-            //         } else {
-            //             console.log(`Image image_to_upload.jpeg uploaded to ${bucketName}.`)
-            //         }
-            //     }
+        // if (req.file) {
+        //     avatar += req.file.originalname;
 
-            // )
+        //     // bucket.upload(req.file.path,
+        //     //     {
+        //     //         destination: `Images/${req.file.originalname}`
+        //     //     }, function (err, file) {
+        //     //         if (err) {
+        //     //             console.error(`Error uploading image image_to_upload.jpeg: ${err}`)
+        //     //         } else {
+        //     //             console.log(`Image image_to_upload.jpeg uploaded to ${bucketName}.`)
+        //     //         }
+        //     //     }
 
-        } else {
-            avatar = "http://i.pravatar.cc/500?img=8";
-            
+        //     // )
 
-        }
+        // } else {
+        //     avatar = "http://i.pravatar.cc/500?img=8";
+
+
+        // }
 
         const validateEmail = async (email) => {
             let user = await User.findOne({ email });
