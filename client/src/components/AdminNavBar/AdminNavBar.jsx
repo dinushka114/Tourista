@@ -16,7 +16,7 @@ const AdminNavBar = () => {
         <div className='admin-nav'>
             <button>Home</button>
             <Link to={'/admin/admin-blog'}><button>Blog</button></Link>
-            <Link to={'/admin/accommodations'}><button>Accommodations</button></Link>
+            <Link to={'/admin/admin-accommodation'}><button>Accommodations</button></Link>
             <button onClick={()=>adminLogout()} id='logout-btn'>Logout</button>
         </div>
     )

@@ -10,7 +10,6 @@ const AllPosts = () => {
 
     const [posts, setPosts] = useState([])
     const [isLoading, setLoading] = useState(false)
-    const [isDeleting, setDelete] = useState(false)
 
     const navigate = useNavigate();
 
@@ -76,6 +75,8 @@ const AllPosts = () => {
 
     return (
         <div>
+            <Link to={'/admin/admin-blog/add-post'}><button style={{ backgroundColor: '#01959a', color: '#fff' }}>New post</button></Link>
+
             {
                 isLoading ? showSkelton() : <table style={{ marginTop: '30px', width: '100%' }} border={'1'} id='posts'>
                     <thead>

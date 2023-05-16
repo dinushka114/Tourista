@@ -12,9 +12,6 @@ const AdminBlog = () => {
 
     return (
         <div className='admin-blog-home'>
-
-            <Link to={'/admin/admin-blog/add-post'}><button style={{ backgroundColor: '#01959a', color: '#fff' }}>New post</button></Link>
-
             <Routes>
                 <Route path='/' element={<AllPosts />} />
                 <Route path='/add-post' element={<AdminPostForm />} />
