@@ -46,4 +46,17 @@ const updateAccommodation = async (req, res) => {
     }
 }
 
-module.exports = { addAccommodation, getAllAccommodations, updateAccommodation }
+const deleteAccommodation = async (req, res) => {
+    try {
+        const id = req.params.id;
+        await Accommodation.deleteOne({ _id: id });
+
+        return res.status(200).json({ message: "Deleted" });
+    } catch (err) {
+        return res.status(500).json({
+            message: `${err.message}`
+        });
+    }
+}
+
+module.exports = { addAccommodation, getAllAccommodations, updateAccommodation, deleteAccommodation }

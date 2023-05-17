@@ -10,6 +10,7 @@ const AllAccommodations = () => {
 
     const [accommodations, setAccommodations] = useState([])
     const [isLoading, setLoading] = useState(false)
+    // const [isDeleting , setDelete] = useState(false)
 
     const navigate = useNavigate();
 
@@ -55,8 +56,18 @@ const AllAccommodations = () => {
         navigate(`/admin/admin-accommodation/update-accommodation/${id}`)
     }
 
-    const deleteAccommodation = (id) => {
+    const deleteAccommodation = async (id) => {
+        setLoading(true)
+        await axios.delete(BASE_URL + `/accommodation/delete-accommodation/${id}`, { headers: adminAuthHeader() })
+            .then(res => {
+                setLoading(false)
+                getAllAccommodations()
+                console.log(res)
+            })
 
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     return (
@@ -90,7 +101,7 @@ const AllAccommodations = () => {
                                         <td>{acc.name}</td>
                                         <td>{acc.location}</td>
                                         <td>{acc.city}</td>
-                                        <td>{acc.description.substring(0,20)}...</td>
+                                        <td>{acc.description.substring(0, 20)}...</td>
                                         <td>{acc.contact}</td>
                                         <td>{acc.email}</td>
                                         <td> <button onClick={() => updateAccommodation(acc._id, acc.type, acc.name, acc.location, acc.city, acc.description, acc.contact, acc.email)}>Update</button>  </td>
