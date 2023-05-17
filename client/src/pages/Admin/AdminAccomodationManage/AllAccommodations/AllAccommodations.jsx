@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import { BASE_URL } from '../../../../API';
 import adminAuthHeader from '../../../../services/admin-auth-header';
@@ -10,6 +10,8 @@ const AllAccommodations = () => {
 
     const [accommodations, setAccommodations] = useState([])
     const [isLoading, setLoading] = useState(false)
+
+    const navigate = useNavigate();
 
     const getAllAccommodations = async () => {
         setLoading(true)
@@ -48,7 +50,9 @@ const AllAccommodations = () => {
     }
 
     const updateAccommodation = (id, type, name, location, city, description, contact, email) => {
-
+        const currentAccommodation = { id, type, name, location, city, description, contact, email }
+        localStorage.setItem("accommodation", JSON.stringify(currentAccommodation))
+        navigate(`/admin/admin-accommodation/update-accommodation/${id}`)
     }
 
     const deleteAccommodation = (id) => {
@@ -86,7 +90,7 @@ const AllAccommodations = () => {
                                         <td>{acc.name}</td>
                                         <td>{acc.location}</td>
                                         <td>{acc.city}</td>
-                                        <td>{acc.description.substring(0.20)}</td>
+                                        <td>{acc.description.substring(0,20)}...</td>
                                         <td>{acc.contact}</td>
                                         <td>{acc.email}</td>
                                         <td> <button onClick={() => updateAccommodation(acc._id, acc.type, acc.name, acc.location, acc.city, acc.description, acc.contact, acc.email)}>Update</button>  </td>

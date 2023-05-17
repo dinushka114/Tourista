@@ -33,6 +33,17 @@ const getAllAccommodations = async (req, res) => {
     }
 }
 
+const updateAccommodation = async (req, res) => {
+    try {
+        const id = req.params.id;
+        await Accommodation.updateOne({ _id: id }, { ...req.body });
 
+        return res.status(200).json({ message: "Updated" });
+    } catch (err) {
+        return res.status(500).json({
+            message: `${err.message}`
+        });
+    }
+}
 
-module.exports = { addAccommodation, getAllAccommodations }
+module.exports = { addAccommodation, getAllAccommodations, updateAccommodation }
