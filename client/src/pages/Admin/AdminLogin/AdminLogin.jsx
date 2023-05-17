@@ -6,7 +6,7 @@ import axios from "axios";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { BASE_URL } from '../../../API';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
 
@@ -61,7 +61,9 @@ const AdminLogin = () => {
 
                         <TextBox type={'text'} placeholder={'Email'} onChangeHandler={(e) => setEmail(e.target.value)} />
                         <TextBox type={'password'} placeholder={'Password'} onChangeHandler={(e) => setPassword(e.target.value)} />
-                        <button type='submit' style={{ marginTop: '10px', padding: '14px 20px' }}>Login</button> </>
+                        <button type='submit' style={{ marginTop: '10px', padding: '14px 20px' }}>Login</button>
+                      
+                         </>
                 }
             </form>
         </div>

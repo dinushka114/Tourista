@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 
 const AdminAccommodationForm = () => {
 
-
     const [isAdding, setAdding] = useState(false)
 
     const navigate = useNavigate();
@@ -18,6 +17,7 @@ const AdminAccommodationForm = () => {
     const [accommodation, setAccommodation] = useState({
         type: '',
         name: '',
+        image:'',
         location: '',
         city: '',
         description: '',
@@ -85,12 +85,13 @@ const AdminAccommodationForm = () => {
                     </select>
                     <TextBox type={'text'} lbl={'Name'} placeholder={'Name'} onChangeHandler={(e) => setAccommodation({ ...accommodation, name: e.target.value })} />
                     <TextBox type={'text'} lbl={'Location'} placeholder={'Location'} onChangeHandler={(e) => setAccommodation({ ...accommodation, location: e.target.value })} />
+                    <TextBox type={'text'} lbl={'Image'} placeholder={'Image'} onChangeHandler={(e) => setAccommodation({ ...accommodation, image: e.target.value })} />
                     <TextBox type={'text'} lbl={'City'} placeholder={'City'} onChangeHandler={(e) => setAccommodation({ ...accommodation, city: e.target.value })} />
                     <label htmlFor="">Description</label>
                     <textarea placeholder='Description' rows={5} onChange={(e) => setAccommodation({ ...accommodation, description: e.target.value })}></textarea>
                     <TextBox type={'text'} lbl={'contact'} placeholder={'Contact'} onChangeHandler={(e) => setAccommodation({ ...accommodation, contact: e.target.value })} />
                     <TextBox type={'email'} lbl={'email'} placeholder={'Email'} onChangeHandler={(e) => setAccommodation({ ...accommodation, email: e.target.value })} />
-                    <button type='submit' style={{ marginTop: '20px' }}>Add</button>
+                    <button type='submit' style={{ marginTop: '20px' , marginBottom:'30px' }}>Add</button>
                 </form>
             }
 

@@ -1,5 +1,5 @@
 
-const { addBlogPost, getAllPosts, getById, updateBlogPost, deleteBlogPost } = require("../../controllers/blog/blog");
+const { addBlogPost, getAllPosts, getById, updateBlogPost, deleteBlogPost, getPostsForUser } = require("../../controllers/blog/blog");
 const { userAuth, checkRole } = require("../../middlewares");
 
 const router = require("express").Router();
@@ -25,6 +25,10 @@ router.put("/update-post/:id", userAuth, checkRole(["Admin"]), async (req, res) 
 
 router.delete("/delete-post/:id", userAuth, checkRole(["Admin"]), async (req, res) => {
     await deleteBlogPost(req, res);
+})
+
+router.get("/get-posts-user", async (req, res) => {
+    await getPostsForUser(req, res);
 })
 
 module.exports = router;

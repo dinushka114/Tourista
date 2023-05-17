@@ -1,4 +1,5 @@
-const { planTrip, getMyTrips, getTripById } = require("../../controllers/plan-trip/plan-trip");
+const { getAllAccommodations } = require("../../controllers/accommodation/accommodation");
+const { planTrip, getMyTrips, getTripById, updateTrip, deleteTrip } = require("../../controllers/plan-trip/plan-trip");
 const { userAuth, checkRole } = require("../../middlewares");
 
 const router = require("express").Router();
@@ -15,5 +16,17 @@ router.get('/get-trip/:id', userAuth, async (req, res) => {
     await getTripById(req, res);
 })
 
+
+router.put('/update-trip/:id', userAuth, async (req, res) => {
+    await updateTrip(req, res);
+})
+
+router.delete('/delete-trip/:id', userAuth, async (req, res) => {
+    await deleteTrip(req, res)
+})
+
+router.get('/get-accommodations', async (req, res) => {
+    await getAllAccommodations(req, res)
+})
 
 module.exports = router;

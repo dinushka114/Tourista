@@ -100,4 +100,17 @@ const deleteBlogPost = async (req, res) => {
     }
 }
 
-module.exports = { addBlogPost, getAllPosts, getById, updateBlogPost, deleteBlogPost }
+const getPostsForUser = async (req, res) => {
+    try {
+
+        const posts = await Blog.find({status:'publish'});
+
+        return res.status(200).json(posts);
+    } catch (err) {
+        return res.status(500).json({
+            message: `${err.message}`
+        });
+    }
+}
+
+module.exports = { addBlogPost, getAllPosts, getById, updateBlogPost, deleteBlogPost, getPostsForUser }

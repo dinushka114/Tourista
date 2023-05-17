@@ -21,6 +21,7 @@ const MyTrips = () => {
     await axios.get(BASE_URL + "/user/my-trips", { headers: authHeader() })
       .then(res => {
         setMyTrips(res.data)
+        setFilteredList(res.data)
       })
       .catch(err => {
         if (err.response.status === 403) {
@@ -29,14 +30,16 @@ const MyTrips = () => {
       })
   }
 
-  const searchTrip = (e) => {
-    const query = e.target.value;
-    var updatedList = [...myTripData];
-    updatedList = updatedList.filter((trip) => {
-      // return trip.whereto.toLowerCase
-    })
-  }
+  const handleSearch = (event) => {
+    let value = event.target.value.toLowerCase();
+    let result = [];
+    // console.log(value);
+    result = myTripData.filter((data) => {
+      return data.whereto.search(value) != -1;
+    });
 
+    setFilteredList(result);
+  }
   useEffect(() => {
     getMyTrips()
     setTimeout(() => {
@@ -69,31 +72,32 @@ const MyTrips = () => {
     )
   }
 
+  const tripDetails = (id, whereto, user, tasks, startdate, enddate) => {
+    const tripData = { id, whereto, user, tasks, startdate, enddate }
+    localStorage.setItem("tripData", JSON.stringify(tripData))
+    navigate(`/trip/${id}`)
+  }
 
 
   const showTrips = () => {
 
     return (
-      myTripData.map((trip) => {
+      filteredList.map((trip) => {
         return (
-          <Link to={`/trip/${trip._id}`}>
-            <section>
-
-              <figure>
-                <img src="https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Free Stock Photo from pexels.com" />
-              </figure>
-              <article>
-                <span>{trip.startdate}</span>
-                <h3>To {trip.whereto}</h3>
-                {/* <p>Learn how to maintain your emotional balance when strangers start attacking you online.</p> */}
-              </article>
-            </section>
-          </Link>
+          <section style={{ cursor: 'pointer' }} onClick={() => tripDetails(trip._id, trip.whereto, trip.user, trip.tasks, trip.startdate, trip.enddate)}>
+            <figure>
+              <img src="https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Free Stock Photo from pexels.com" />
+            </figure>
+            <article>
+              <span>{trip.startdate}</span>
+              <h3>To {trip.whereto}</h3>
+              {/* <p>Learn how to maintain your emotional balance when strangers start attacking you online.</p> */}
+            </article>
+          </section>
         )
       })
     )
   }
-
 
 
 
@@ -104,7 +108,7 @@ const MyTrips = () => {
 
         <div className='trip-top-search'>
           <h1>My Trips</h1>
-          <input type="text" placeholder='search by destination' onChange={searchTrip} />
+          <input type="text" placeholder='search by destination' onChange={(event) => handleSearch(event)} />
         </div>
         <main>
 

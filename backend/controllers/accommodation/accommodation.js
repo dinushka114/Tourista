@@ -59,4 +59,5 @@ const deleteAccommodation = async (req, res) => {
     }
 }
 
+
 module.exports = { addAccommodation, getAllAccommodations, updateAccommodation, deleteAccommodation }

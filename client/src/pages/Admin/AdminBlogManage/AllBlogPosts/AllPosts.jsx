@@ -10,8 +10,20 @@ const AllPosts = () => {
 
     const [posts, setPosts] = useState([])
     const [isLoading, setLoading] = useState(false)
+    const [filteredData, setFilteredData] = useState(posts);
 
     const navigate = useNavigate();
+
+    const handleSearch = (event) => {
+        let value = event.target.value.toLowerCase();
+        let result = [];
+        // console.log(value);
+        result = posts.filter((data) => {
+            return data.title.search(value) != -1;
+        });
+
+        setFilteredData(result);
+    }
 
     const getPosts = async () => {
         setLoading(true)
@@ -20,6 +32,7 @@ const AllPosts = () => {
                 console.log(res)
                 setPosts(res.data)
                 setLoading(false)
+                setFilteredData(res.data)
             })
 
             .catch(err => {
@@ -75,7 +88,10 @@ const AllPosts = () => {
 
     return (
         <div>
-            <Link to={'/admin/admin-blog/add-post'}><button style={{ backgroundColor: '#01959a', color: '#fff' }}>New post</button></Link>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Link to={'/admin/admin-blog/add-post'}><button style={{ backgroundColor: '#01959a', color: '#fff' }}>New post</button></Link>
+                <input type="text" style={{ width: '300px' }} placeholder='Search' onChange={(event) => handleSearch(event)} />
+            </div>
 
             {
                 isLoading ? showSkelton() : <table style={{ marginTop: '30px', width: '100%' }} border={'1'} id='posts'>
@@ -92,7 +108,7 @@ const AllPosts = () => {
 
                     <tbody>
                         {
-                            posts.map((post, index) => {
+                            filteredData.map((post, index) => {
                                 return (
                                     <tr style={{ textAlign: 'center' }}>
                                         <td>{index + 1}</td>
@@ -108,6 +124,9 @@ const AllPosts = () => {
                     </tbody>
                 </table>
             }
+
+
+
 
         </div>
     )

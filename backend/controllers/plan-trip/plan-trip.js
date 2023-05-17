@@ -65,4 +65,47 @@ const getTripById = async (req, res) => {
     }
 }
 
-module.exports = { planTrip, getMyTrips, getTripById };
+const updateTrip = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const { user, whereto, startdate, enddate, tasks } = req.body;
+        await Trip.updateOne({ _id: id }, { user, whereto, startdate, enddate, tasks })
+            .then(result => {
+                return res.status(201).json({ mesage: "Trip Updated" })
+            })
+
+            .catch(err => {
+                return res.status(500).json({
+                    message: `${err.message}`
+                });
+            })
+
+    } catch (err) {
+        return res.status(500).json({
+            message: `${err.message}`
+        });
+    }
+}
+
+const deleteTrip = async (req, res) => {
+    try {
+        const id = req.params.id;
+        await Trip.deleteOne({ _id: id })
+            .then(result => {
+                return res.status(201).json({ mesage: "Trip deleted" })
+            })
+
+            .catch(err => {
+                return res.status(500).json({
+                    message: `${err.message}`
+                });
+            })
+
+    } catch (err) {
+        return res.status(500).json({
+            message: `${err.message}`
+        });
+    }
+}
+
+module.exports = { planTrip, getMyTrips, getTripById, updateTrip, deleteTrip };

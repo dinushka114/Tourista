@@ -15,9 +15,7 @@ const Blog = () => {
             <Hero cName="hero-mid"
                 heroImg={BlogImg}
                 title="Blog"
-            // subtitle="Plan a tirip"
-            // btnClass="show"
-            // btnText="Travel plan"
+
             />
 
             <Trip />

@@ -17,7 +17,7 @@ const AdminPostForm = () => {
     const [subtitle, setSubTitle] = useState(null)
     const [content, setContent] = useState(null);
     const [image, setImage] = useState(null);
-    const [status, setStatus] = useState("draft");
+    const [status, setStatus] = useState(null);
     const [isAdding, setAdding] = useState(false)
 
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ const AdminPostForm = () => {
     const addBlogPost = async (e) => {
         e.preventDefault();
 
-
+       
         if (title == null || title.trim == "" || subtitle == null || subtitle.trim == "" || content == null || content.trim == "" || image == null || image.trim == "") {
             alert("Fill all the required details")
             return

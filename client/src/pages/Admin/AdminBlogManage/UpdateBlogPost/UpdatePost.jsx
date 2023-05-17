@@ -98,7 +98,7 @@ const UpdatePost = () => {
                         />
 
                         <label htmlFor="">Status</label>
-                        <select id="" style={{ backgroundColor: "#fff" }} onChangeHandler={(e) => setPost({ ...post, status: e.target.value })} >
+                        <select id="" style={{ backgroundColor: "#fff" }} onChange={(e) => setPost({ ...post, status: e.target.value })} >
                             <option value="draft">draft</option>
                             <option value="publish">publish</option>
                         </select>

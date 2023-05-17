@@ -10,7 +10,7 @@ const AllAccommodations = () => {
 
     const [accommodations, setAccommodations] = useState([])
     const [isLoading, setLoading] = useState(false)
-    // const [isDeleting , setDelete] = useState(false)
+    const [filteredData, setFilteredData] = useState(accommodations);
 
     const navigate = useNavigate();
 
@@ -21,6 +21,7 @@ const AllAccommodations = () => {
                 console.log(res)
                 setLoading(false)
                 setAccommodations(res.data)
+                setFilteredData(res.data)
             })
 
             .catch(err => {
@@ -32,7 +33,16 @@ const AllAccommodations = () => {
         getAllAccommodations()
     }, [])
 
-    console.log(accommodations)
+    const handleSearch = (event) => {
+        let value = event.target.value.toLowerCase();
+        let result = [];
+        // console.log(value);
+        result = accommodations.filter((data) => {
+            return data.type.search(value) != -1;
+        });
+
+        setFilteredData(result);
+    }
 
     const showSkelton = () => {
         return (
@@ -72,7 +82,10 @@ const AllAccommodations = () => {
 
     return (
         <div>
-            <Link to={'/admin/admin-accommodation/add-accommodation'}><button style={{ backgroundColor: '#01959a', color: '#fff' }}>New Accommodation</button></Link>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Link to={'/admin/admin-accommodation/add-accommodation'}><button style={{ backgroundColor: '#01959a', color: '#fff' }}>New Accommodation</button></Link>
+                <input type="text" style={{ width: '300px' }} placeholder='Search' onChange={(event) => handleSearch(event)} />
+            </div>
 
             {
                 isLoading ? showSkelton() : <table style={{ marginTop: '30px', width: '100%' }} border={'1'} id='posts'>
@@ -93,7 +106,7 @@ const AllAccommodations = () => {
 
                     <tbody>
                         {
-                            accommodations.map((acc, index) => {
+                            filteredData.map((acc, index) => {
                                 return (
                                     <tr style={{ textAlign: 'center' }}>
                                         <td>{index + 1}</td>

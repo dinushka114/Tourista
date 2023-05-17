@@ -2,12 +2,22 @@ import React from 'react'
 
 const TripData = (props) => {
   return (
-    <div className='t-card'>
-        <div className='t-image'>
-            <img src={props.img} alt="img" />
+
+    <div class="card" onClick={props.showPostDetails}>
+      <div class="card__image-container">
+        <img
+          src={props.img}
+        />
+      </div>
+      <div class="card__content">
+        <p class="card__title text--medium">
+          {props.title}
+        </p>
+        <div class="card__info">
+          <p class="text--medium">{props.subtitle}</p>
+          {/* <p class="card__price text--medium">Free</p> */}
         </div>
-        <h4>{props.heading}</h4>
-        <p>{props.text}</p>
+      </div>
     </div>
   )
 }

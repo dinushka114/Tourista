@@ -5,6 +5,7 @@ import Image from "../../../src/images/image1.jpg"
 import Destination from '../../components/Destination/Destination'
 import Trip from '../../components/Trip/Trip'
 import Footer from '../../components/Footer/Footer'
+import AccommodationList from '../../components/AccomodationList/AccommodationList'
 
 const Home = () => {
     return (
@@ -18,9 +19,14 @@ const Home = () => {
                 btnText="Plan a trip"
             />
             <Destination />
-            <div style={{textAlign:'center'}}>
+            <div style={{ textAlign: 'center' }}>
                 <Trip />
             </div>
+
+            <div style={{textAlign:'center'}}>
+                <AccommodationList />
+            </div>
+
             <Footer />
         </>
     )
