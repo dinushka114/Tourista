@@ -5,7 +5,7 @@ const path = require("path");
 require('dotenv').config()
 
 
-const db_connection = require("./database/index");
+// const db_connection = require("./database/index");
 
 const authRoute = require("./routes/auth/auth");
 const userRoute = require("./routes/user/user");
@@ -17,7 +17,7 @@ const PORT = process.env.PORT;
 
 
 
-db_connection()
+// db_connection()
 
 
 const app = express();
@@ -46,3 +46,4 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
 
+module.exports = app;

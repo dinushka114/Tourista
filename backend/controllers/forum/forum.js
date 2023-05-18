@@ -33,7 +33,7 @@ const askQuiz = async (req, res) => {
 
             await newQuiz.save()
 
-            return res.status(200).json({ message: "Quiz is submitted" });
+            return res.status(201).json({ message: "Quiz is submitted" });
 
         });
 
