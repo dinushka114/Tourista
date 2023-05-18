@@ -20,9 +20,6 @@ const PORT = process.env.PORT;
 db_connection()
 
 
-
-
-
 const app = express();
 app.use(cors());
 app.use(express.json());
