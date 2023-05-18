@@ -31,6 +31,19 @@ describe("POST /api/auth/login-user", () => {
   });
 });
 
+
+//Invalid login credentials
+describe("POST /api/auth/login-user", () => {
+    it("user login to the sysetm", async () => {
+      const res = await request(app).post("/api/auth/login-user").send({
+        email: "dinushk1apiyumal678@gmail.com",
+        password: "Iwin1day@",
+      });
+      expect(res.statusCode).toBe(404);
+
+    });
+  });
+
 // Get all quizes
 describe("GET /api/forum/all-quizes", () => {
   it("should return all quizes", async () => {
