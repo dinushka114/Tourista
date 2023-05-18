@@ -113,8 +113,8 @@ const AllPosts = () => {
                                     <tr style={{ textAlign: 'center' }}>
                                         <td>{index + 1}</td>
                                         <td>{post.title}</td>
-                                        <td>{post.subtitle}</td>
-                                        <td>{post.image}</td>
+                                        <td>{post.subtitle.substring(0,45)}...</td>
+                                        <td> <img src={post.image} style={{width:'100px'}} alt="" srcset="" /> </td>
                                         <td> <button onClick={() => updateBlogPost(post._id, post.title, post.subtitle, post.image, post.content, post.status)}>Update</button>  </td>
                                         <td> <button onClick={() => deletePost(post._id)}>Delete</button> </td>
                                     </tr>
