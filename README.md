@@ -48,7 +48,7 @@ Touarsta is built using the following technologies:
 
 ## Getting Started
 
-To run Touarsta locally on your machine, follow these steps:
+To run Touarista locally on your machine, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/touarsta.git`
 2. Navigate to the project directory: `cd touarsta`
@@ -73,7 +73,7 @@ Thank you for considering contributing to Touarsta! 🙌
 
 ## License
 
-Touarsta is released under the [MIT License](https://opensource.org/licenses/MIT). You are free to use, modify, and distribute the codebase as per the terms of the license.
+Touarista is released under the [MIT License](https://opensource.org/licenses/MIT). You are free to use, modify, and distribute the codebase as per the terms of the license.
 
 ## Contact
 
