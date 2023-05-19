@@ -1,0 +1,28 @@
+.forum{
+    margin-top: 180px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forum_title{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+.forum_title h1{
+    margin-right: 20px;
+}
+
+@media screen and (max-width:850px) {
+    .forum{
+        width: 90%;
+        
+    }
+
+    .forum h1{
+        font-size: 1.6rem;
+    }
+}
