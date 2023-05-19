@@ -39,16 +39,6 @@ Touarsta is built using the following technologies:
 - ☁️ **Cloud Hosting:** Touarsta is hosted in the cloud, ensuring scalability, reliability, and accessibility for users from anywhere around the world.
 
 
-- 💾 **MongoDB:** A NoSQL database used for storing destination information, user data, and reviews.
-
-- ⚡ **Express.js:** A minimal and flexible web application framework for Node.js used for building the backend API.
-
-- ⚛️ **React.js:** A JavaScript library used for building the user interface and providing an interactive and dynamic experience to users.
-
-- 🖥️ **Node.js:** A runtime environment used for running JavaScript on the server-side, handling requests, and managing the backend of the application.
-
-- ☁️ **Cloud Hosting:** Touarsta is hosted in the cloud, ensuring scalability, reliability, and accessibility for users from anywhere around the world.
-
 ## Getting Started
 
 To run Touarsta locally on your machine, follow these steps:
