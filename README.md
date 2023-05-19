@@ -5,17 +5,6 @@ Welcome to Touarsta! This is a tourist website built using the MERN stack and ho
 
 ## Features
 
-- 🔍 **Browse Destinations:** Discover a wide range of destinations from all around the world. View beautiful images, read descriptions, and learn about popular tourist spots in each location.
-
-- 🔎 **Search and Filter:** Easily search for destinations based on your preferences such as country, city, or specific attractions. Apply filters to narrow down your search and find the perfect destination for your next adventure.
-
-- 📅 **Plan Your Trip:** Create an account and start planning your trip by saving your favorite destinations. You can also create personalized itineraries by adding attractions, activities, and accommodations to your trip.
-
-- 🗺️ **Interactive Maps:** Explore destinations through interactive maps that provide detailed information about nearby attractions, restaurants, and points of interest. Plan your routes and navigate through your chosen location efficiently.
-
-- 🌟 **User Reviews and Ratings:** Read reviews and ratings from fellow travelers who have visited different destinations. Share your own experiences and help others make informed decisions when planning their trips.
-
-- 🔒 **User Authentication:** Securely create an account and log in to Touarsta to access additional features such as saving your favorite destinations and writing reviews.
 
 ## Technologies Used
 
