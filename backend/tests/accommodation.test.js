@@ -40,7 +40,7 @@ describe("POST /api/auth/login-admin", () => {
   });
 });
 
-// Get all blog posts
+// Get all accommodations
 describe("GET /api/accommodation/get-accommodations", () => {
   it("should return all accommodation", async () => {
     const res = await request(app)
@@ -69,5 +69,25 @@ describe("POST /api/accommodation/add-accommodation", () => {
       .set("Authorization", `${token}`);
     expect(res.statusCode).toBe(201);
     expect(res.body.message).toEqual("accommodation submitted")
+  });
+});
+
+
+// Add new accommodation as unaouthroized user
+describe("POST /api/accommodation/add-accommodation", () => {
+  it("Admin should add new post", async () => {
+    const res = await request(app)
+      .post("/api/accommodation/add-accommodation")
+      .send({
+        type: 'Hotel',
+        name: 'Test name',
+        image:'Test Image',
+        location: 'Test Location',
+        city: 'Test city',
+        description: 'Test description',
+        contact: '072636127127',
+        email: 'test@gmail.com'
+      })
+    expect(res.statusCode).toBe(403);
   });
 });
