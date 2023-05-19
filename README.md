@@ -24,6 +24,21 @@ Welcome to Touarsta! This is a tourist website built using the MERN stack and ho
 
 Touarsta is built using the MERN (MongoDB, Express.js, React.js, Node.js) stack, a popular and powerful technology stack for developing modern web applications. The following technologies were utilized in the development of this website:
 
+## Technologies Used
+
+Touarsta is built using the following technologies:
+
+- ![MongoDB](https://img.icons8.com/color/48/000000/mongodb.png) **MongoDB:** A NoSQL database used for storing destination information, user data, and reviews.
+
+- ![Express.js](https://img.icons8.com/color/48/000000/express.png) **Express.js:** A minimal and flexible web application framework for Node.js used for building the backend API.
+
+- ![React.js](https://img.icons8.com/color/48/000000/react.png) **React.js:** A JavaScript library used for building the user interface and providing an interactive and dynamic experience to users.
+
+- ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) **Node.js:** A runtime environment used for running JavaScript on the server-side, handling requests, and managing the backend of the application.
+
+- ☁️ **Cloud Hosting:** Touarsta is hosted in the cloud, ensuring scalability, reliability, and accessibility for users from anywhere around the world.
+
+
 - 💾 **MongoDB:** A NoSQL database used for storing destination information, user data, and reviews.
 
 - ⚡ **Express.js:** A minimal and flexible web application framework for Node.js used for building the backend API.
