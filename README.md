@@ -32,7 +32,7 @@ Touarsta is built using the following technologies:
 
 - ![Express.js](https://img.icons8.com/color/48/000000/express.png) **Express.js:** A minimal and flexible web application framework for Node.js used for building the backend API.
 
-- ![React.js](https://img.icons8.com/color/48/000000/react.png) **React.js:** A JavaScript library used for building the user interface and providing an interactive and dynamic experience to users.
+- ![React.js](https://img.icons8.com/dusk/64/react.png) **React.js:** A JavaScript library used for building the user interface and providing an interactive and dynamic experience to users.
 
 - ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) **Node.js:** A runtime environment used for running JavaScript on the server-side, handling requests, and managing the backend of the application.
 
