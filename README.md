@@ -22,6 +22,8 @@ Touarsta offers a range of features to enhance your vacation planning and explor
 
 - 🔒 User Authentication: Securely create an account and access additional features like saving favorites and contributing to the forum.
 
+- Admin Panel: An admin panel should be available to manage user accounts, content, bookings, reviews, and overall site administration.
+
 These features make Touarsta a comprehensive platform for planning and exploring your dream vacations.
 
 
