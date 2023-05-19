@@ -5,6 +5,22 @@ Welcome to Touarsta! This is a tourist website built using the MERN stack and ho
 
 ## Features
 
+- 📝 Blog Post: Stay updated with travel tips, destination guides, and insightful articles through engaging blog posts.
+
+- 🏨 Find Accommodations: Discover and book accommodations based on your preferences and budget.
+
+- 💬 Tourist Forum: Connect with fellow travelers, share experiences, ask questions, and get recommendations.
+
+- 🔍 Search and Filter: Effortlessly search and narrow down destinations based on your criteria.
+
+- 📅 Plan Your Trip: Create personalized itineraries by saving favorite destinations, attractions, and activities.
+
+- 🗺️ Interactive Maps: Explore destinations with detailed information on attractions, restaurants, and points of interest.
+
+- ⭐ User Reviews and Ratings: Read and contribute reviews and ratings from fellow travelers.
+
+- 🔒 User Authentication: Securely create an account and access additional features like saving favorites and contributing to the forum.
+
 
 ## Technologies Used
 
