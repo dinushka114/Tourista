@@ -15,8 +15,6 @@ Welcome to Touarsta! This is a tourist website built using the MERN stack and ho
 
 - 📅 Plan Your Trip: Create personalized itineraries by saving favorite destinations, attractions, and activities.
 
-- 🗺️ Interactive Maps: Explore destinations with detailed information on attractions, restaurants, and points of interest.
-
 - ⭐ User Reviews and Ratings: Read and contribute reviews and ratings from fellow travelers.
 
 - 🔒 User Authentication: Securely create an account and access additional features like saving favorites and contributing to the forum.
