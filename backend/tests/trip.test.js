@@ -70,7 +70,7 @@ describe("POST /api/user/plan-trip", () => {
 
 // Get all my trips
 describe("GET /api/user/my-trips", () => {
-  it("should return all posts", async () => {
+  it("should return all trips", async () => {
     const res = await request(app)
       .get("/api/user/my-trips")
       .set("Authorization", `${token}`);
