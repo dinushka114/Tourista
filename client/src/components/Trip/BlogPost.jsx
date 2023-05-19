@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import TripData from '../TripData/TripData'
+import TripData from '../TripData/BlogPostData'
 import Img1 from "../../images/mountain.jpg"
 import Img2 from "../../images/mountain2.jpg"
 import Img3 from "../../images/mountain3.jpg"

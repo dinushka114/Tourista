@@ -1,6 +1,7 @@
 import {render , screen, cleanup , component} from "@testing-library/react";
-import AskQuizForm from "../components/AskQuizForm/AskQuizForm"
+import BlogPost from "../components/Trip/BlogPost"
 
-test("should render ask quiz form", () => {
-  expect(component.contains(<AskQuizForm />)).toBe(false)
+
+test("should render Blog Post Component", () => {
+  expect(component.contains(<BlogPost />)).toBe(false)
 });
