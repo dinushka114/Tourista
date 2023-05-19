@@ -73,7 +73,7 @@ Touarsta is released under the [MIT License](https://opensource.org/licenses/MIT
 
 If you have any questions or need assistance, please feel free to reach out to us at 📧 [contact@touarsta.com](mailto:contact@touarsta.com).
 
-## Project Group
+## Member Details
 
 📌Chandrarathna M.G.D.P.M.B
 IT20653590
