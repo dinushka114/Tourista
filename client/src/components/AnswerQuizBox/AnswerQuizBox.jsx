@@ -20,7 +20,9 @@ const quizBoxStyles = {
     fontSize: '1rem',
     borderRadius: '4px',
     boxShadow: '0 5px 15px 0 rgba(0, 0, 0, .10)',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    marginBottom:'10px',
+    borderRight:'6px solid #01959a'
 }
 
 const avatarStyles = {

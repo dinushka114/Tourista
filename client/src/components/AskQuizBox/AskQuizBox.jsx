@@ -36,7 +36,8 @@ const quizBoxStyles = {
     boxShadow: '0 5px 15px 0 rgba(0, 0, 0, .10)',
     cursor: 'pointer',
     width: '100%',
-    borderRight: '6px solid #01959a'
+    borderRight: '6px solid #01959a',
+    marginBottom:'10px'
 
 }
 

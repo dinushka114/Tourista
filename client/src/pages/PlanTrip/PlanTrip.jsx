@@ -8,6 +8,7 @@ import axios from "axios";
 import { BASE_URL } from '../../API';
 import authHeader from '../../services/auth-header';
 import Swal from 'sweetalert2'
+import Footer from "../../components/Footer/Footer"
 
 const PlanTrip = () => {
 
@@ -81,11 +82,6 @@ const PlanTrip = () => {
     }
 
 
-
-
-
-
-
   }
 
   const deleteTask = (taskNo) => {
@@ -104,7 +100,7 @@ const PlanTrip = () => {
         <Route path='/' element={<TripPlanBox submitTrip={submitTrip} setTripData={setTripData} tripData={tripData} tripTasks={tasks} deleteTask={deleteTask} validate={validate} />} />
         <Route path='/add-task' element={<TripTask tripTasks={tasks} setTripTasks={setTasks} />} />
       </Routes>
-
+    <Footer />
     </div>
   )
 }

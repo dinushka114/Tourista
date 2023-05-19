@@ -50,5 +50,10 @@
   },
   "devDependencies": {
     "axios": "^1.4.0"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)/"
+    ]
   }
 }
