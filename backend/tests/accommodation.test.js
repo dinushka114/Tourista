@@ -41,29 +41,33 @@ describe("POST /api/auth/login-admin", () => {
 });
 
 // Get all blog posts
-describe("GET /api/blog/get-posts", () => {
-  it("should return all posts", async () => {
+describe("GET /api/accommodation/get-accommodations", () => {
+  it("should return all accommodation", async () => {
     const res = await request(app)
-      .get("/api/blog/get-posts")
+      .get("/api/accommodation/get-accommodations")
       .set("Authorization", `${token}`);
     expect(res.statusCode).toBe(200);
     expect(res.body.length).toBeGreaterThan(0);
   });
 });
 
-// Add new post
-describe("POST /api/blog/add-post", () => {
+// Add new accommodation
+describe("POST /api/accommodation/add-accommodation", () => {
   it("Admin should add new post", async () => {
     const res = await request(app)
-      .post("/api/blog/add-post")
+      .post("/api/accommodation/add-accommodation")
       .send({
-        title:"Testing blog post",
-        subtitle:"Testing subtitle post",
-        image:"Testing image post",
-        content:"Testing content post",
-        status:"publish"
+        type: 'Hotel',
+        name: 'Test name',
+        image:'Test Image',
+        location: 'Test Location',
+        city: 'Test city',
+        description: 'Test description',
+        contact: '072636127127',
+        email: 'test@gmail.com'
       })
       .set("Authorization", `${token}`);
     expect(res.statusCode).toBe(201);
+    expect(res.body.message).toEqual("accommodation submitted")
   });
 });
