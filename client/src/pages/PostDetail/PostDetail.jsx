@@ -24,6 +24,8 @@ const PostDetail = () => {
         <br />
 
         {ReactHtmlParser(post.content)}
+
+        <button>Download pdf</button>
       </div>
 
       <Footer />

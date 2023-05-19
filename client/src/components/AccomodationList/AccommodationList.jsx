@@ -36,7 +36,7 @@ const AccommodationList = () => {
 
     return (
         <div>
-            <h1>recommended places</h1>
+            <h1>Choose a place to have a fun</h1>
 
             <main>
                 <section className='cards'>

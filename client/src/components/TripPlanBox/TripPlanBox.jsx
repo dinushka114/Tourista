@@ -14,7 +14,7 @@ const TripPlanBox = ({ submitTrip, setTripData, tripData, tripTasks, deleteTask,
             <TextBox value={tripData.where} type={'text'} placeholder={'Your destination'} lbl={'Where to'} name="where" onChangeHandler={(e) => { setTripData({ ...tripData, [e.target.name]: e.target.value }) }} />
             <TextBox value={tripData.start} type={'date'} lbl={'Start date'} name={"start"} onChangeHandler={(e) => { setTripData({ ...tripData, [e.target.name]: e.target.value }) }} />
             <TextBox value={tripData.end} type={'date'} lbl={'End date'} name={"end"} onChangeHandler={(e) => { setTripData({ ...tripData, [e.target.name]: e.target.value }) }} />
-
+        
             {
                 !validate ? <p className='error'>Please fill trip data</p> : null
             }

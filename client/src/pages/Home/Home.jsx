@@ -13,8 +13,8 @@ const Home = () => {
             <Navbar />
             <Hero cName="hero"
                 heroImg={Image}
-                title="The journey is yours"
-                subtitle="subitle sasldasjdalkjdalksjdasldjlaskdj"
+                title="Explore & Wander"
+                subtitle="Your Gateway to Adventure"
                 btnClass="show"
                 btnText="Plan a trip"
             />
