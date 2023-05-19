@@ -65,5 +65,6 @@ describe("POST /api/blog/add-post", () => {
       })
       .set("Authorization", `${token}`);
     expect(res.statusCode).toBe(201);
+    expect(res.body.message).toEqual("Post submitted");
   });
 });
