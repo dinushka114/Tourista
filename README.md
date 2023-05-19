@@ -43,7 +43,7 @@ Touarsta is built using the following technologies:
 
 - ![Node.js](https://img.icons8.com/color/48/000000/nodejs.png) **Node.js:** A runtime environment used for running JavaScript on the server-side, handling requests, and managing the backend of the application.
 
-- ☁️ **Cloud Hosting:** Touarsta is hosted in the cloud, ensuring scalability, reliability, and accessibility for users from anywhere around the world.
+- ☁️ **Cloud Hosting:** Touarsita is hosted in the cloud, ensuring scalability, reliability, and accessibility for users from anywhere around the world.
 
 
 ## Getting Started
