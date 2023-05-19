@@ -1,4 +1,4 @@
-# 🌍 Touarsta - Tourist Website
+# 🌍 Tourista - Tourist Website
 
 ## Specially made for Uplift Sri-Lanka's Tourim Industry
 
