@@ -55,7 +55,7 @@ To run Touarista locally on your machine, follow these steps:
 3. Install the dependencies: `npm install`
 4. Set up the environment variables by creating a `.env` file and specifying the necessary credentials (database connection, cloud hosting, etc.).
 5. Run the development server: `npm run start:dev`
-6. Open your browser and visit `http://localhost:3000` to access Touarsta.
+6. Open your browser and visit `http://localhost:3000` to access Tourista.
 
 Please note that the above steps assume you have Node.js and npm (Node Package Manager) installed on your machine.
 
