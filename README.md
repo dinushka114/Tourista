@@ -24,6 +24,8 @@ Touarsta offers a range of features to enhance your vacation planning and explor
 
 - Admin Panel: An admin panel should be available to manage user accounts, content, bookings, reviews, and overall site administration.
 
+- Secure Payment Gateway: Integration with a secure payment gateway to facilitate online payments for accommodation bookings, tour packages, and other services.
+
 These features make Touarsta a comprehensive platform for planning and exploring your dream vacations.
 
 
