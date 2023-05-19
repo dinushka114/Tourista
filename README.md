@@ -26,6 +26,8 @@ Touarsta offers a range of features to enhance your vacation planning and explor
 
 - Secure Payment Gateway: Integration with a secure payment gateway to facilitate online payments for accommodation bookings, tour packages, and other services.
 
+- Mobile Responsiveness: The website should be mobile-friendly and provide a seamless user experience on different devices and screen sizes.
+
 These features make Touarsta a comprehensive platform for planning and exploring your dream vacations.
 
 
