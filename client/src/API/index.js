@@ -1,4 +1,4 @@
 
-export const BASE_URL = "http://localhost:3001/api";
-// export const BASE_URL = "https://touristaapi.de.r.appspot.com/api";
+// export const BASE_URL = "http://localhost:3001/api";
+export const BASE_URL = "https://touristaapi.de.r.appspot.com/api";
 
