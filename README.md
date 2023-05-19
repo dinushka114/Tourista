@@ -75,8 +75,12 @@ If you have any questions or need assistance, please feel free to reach out to u
 
 ## Project Group
 
-Chandrarathna M.G.D.P.M.B
+📌Chandrarathna M.G.D.P.M.B
 IT20653590
+
+📌Bandara S.M.D.S
+IT20653286
+
 
 
 
