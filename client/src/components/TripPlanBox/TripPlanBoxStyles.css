@@ -1,0 +1,24 @@
+.trip_planner{
+    margin-top: 180px;
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: start;
+}
+
+.trip_planner h1{
+    font-size: 2.5rem;
+}
+
+
+@media screen and (max-width:850px) {
+    .trip_planner{
+        width: 90%;
+        
+    }
+
+    .trip_planner h1{
+        font-size: 1.6rem;
+    }
+}

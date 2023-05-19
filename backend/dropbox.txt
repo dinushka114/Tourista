@@ -1,0 +1,2 @@
+app-key = 44x4aso4yfvifjf
+secret = 1ooh7qv46dur5u2
