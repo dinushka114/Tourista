@@ -13,9 +13,11 @@ const AccommodationItem = (props) => {
                     {props.name}
                 </p>
                 <div class="card__info">
+                    
                     <p class="text--medium">{props.description}</p>
-                    <p class="card__price text--medium" style={{color:'#fff'}}>Chek now</p>
+                    
                 </div>
+                
             </div>
         </div>
     )

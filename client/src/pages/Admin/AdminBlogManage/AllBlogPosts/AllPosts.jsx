@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import { Link, useNavigate } from 'react-router-dom';
 import adminAuthHeader from '../../../../services/admin-auth-header';
 import { BASE_URL } from '../../../../API';
+import { useReactToPrint } from "react-to-print";
 
 const AllPosts = () => {
 
@@ -86,8 +87,13 @@ const AllPosts = () => {
         navigate(`/admin/admin-blog/update-post/${id}`)
     }
 
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+      content: () => componentRef.current,
+    });
+
     return (
-        <div>
+        <div ref={componentRef}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <Link to={'/admin/admin-blog/add-post'}><button style={{ backgroundColor: '#01959a', color: '#fff' }}>New post</button></Link>
                 <input type="text" style={{ width: '300px' }} placeholder='Search' onChange={(event) => handleSearch(event)} />
@@ -123,10 +129,12 @@ const AllPosts = () => {
                         }
                     </tbody>
                 </table>
+                
             }
 
 
-
+        <br></br>
+        <button onClick={handlePrint}>Generate Report</button>
 
         </div>
     )

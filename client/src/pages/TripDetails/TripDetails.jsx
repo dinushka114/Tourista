@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import Navbar from "../../components/Navbar/Navbar";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -149,12 +150,14 @@ const TripDetails = () => {
       });
   };
 
-  const generateReport=()=>{
-    alert("Generate")
-  }
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
 
   return (
-    <div>
+    <div ref={componentRef}>
       <Navbar />
       <Hero
         cName="hero-mid"
@@ -309,7 +312,7 @@ const TripDetails = () => {
                 >
                   Delete Plan
                 </button>
-                <button onClick={() => generateReport()}>
+                <button onClick={handlePrint}>
                   <i class="fa-solid fa-download"></i>
                 </button>
               </div>

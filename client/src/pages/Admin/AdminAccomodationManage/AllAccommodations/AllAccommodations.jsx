@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import { BASE_URL } from '../../../../API';
 import adminAuthHeader from '../../../../services/admin-auth-header';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { useReactToPrint } from "react-to-print";
 
 const AllAccommodations = () => {
 
@@ -38,7 +39,7 @@ const AllAccommodations = () => {
         let result = [];
         // console.log(value);
         result = accommodations.filter((data) => {
-            return data.type.search(value) != -1;
+            return data.name.search(value) != -1;
         });
 
         setFilteredData(result);
@@ -80,8 +81,13 @@ const AllAccommodations = () => {
             })
     }
 
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+      content: () => componentRef.current,
+    });
+
     return (
-        <div>
+        <div ref={componentRef}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <Link to={'/admin/admin-accommodation/add-accommodation'}><button style={{ backgroundColor: '#01959a', color: '#fff' }}>New Accommodation</button></Link>
                 <input type="text" style={{ width: '300px' }} placeholder='Search' onChange={(event) => handleSearch(event)} />
@@ -97,6 +103,7 @@ const AllAccommodations = () => {
                             <th>Location</th>
                             <th>City</th>
                             <th>Description</th>
+                            <th>Image</th>
                             <th>Contact</th>
                             <th>Email</th>
                             <th>Update</th>
@@ -115,6 +122,7 @@ const AllAccommodations = () => {
                                         <td>{acc.location}</td>
                                         <td>{acc.city}</td>
                                         <td>{acc.description.substring(0, 20)}...</td>
+                                        <td> <img src={acc.image} style={{width:'100px'}} alt="" srcset="" /> </td>
                                         <td>{acc.contact}</td>
                                         <td>{acc.email}</td>
                                         <td> <button onClick={() => updateAccommodation(acc._id, acc.type, acc.name, acc.location, acc.city, acc.description, acc.contact, acc.email)}>Update</button>  </td>
@@ -126,7 +134,8 @@ const AllAccommodations = () => {
                     </tbody>
                 </table>
             }
-
+        <br></br>
+        <button onClick={handlePrint}>Generate Report</button>
         </div>
     )
 }

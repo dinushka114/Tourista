@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Hero from "../../components/Hero/Hero";
 import Footer from "../../components/Footer/Footer";
 import ReactHtmlParser from "react-html-parser";
+import { useReactToPrint } from "react-to-print";
 
 const PostDetail = () => {
   const [post, setPosts] = useState({
@@ -13,8 +14,14 @@ const PostDetail = () => {
     content: JSON.parse(localStorage.getItem("currentPostDetails")).content,
   });
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+
   return (
-    <div>
+    <div ref={componentRef}>
       <Navbar />
       <Hero cName="hero-mid" heroImg={post.image} title={post.title} />
 
@@ -25,7 +32,7 @@ const PostDetail = () => {
 
         {ReactHtmlParser(post.content)}
 
-        <button>Download pdf</button>
+        <button onClick={handlePrint}>Download pdf</button>
       </div>
 
       <Footer />
