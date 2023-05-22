@@ -4,6 +4,10 @@
 
 Welcome to Touarsta! This is a tourist website built using the MERN stack and hosted in the cloud ☁️. Touarsta aims to provide users with a comprehensive platform to explore and plan their dream vacations ✈️🌴.
 
+### **Feel free to go & checkout our web**
+
+### Click here 👉: https://tourista-lk.web.app/
+
 ## Features
 
 Touarsta offers a range of features to enhance your vacation planning and exploration experience:
@@ -81,17 +85,18 @@ If you have any questions or need assistance, please feel free to reach out to u
 
 ## Member Details
 
-📌Chandrarathna M.G.D.P.M.B
+📌Chandrarathna M.G.D.P.M.B - Touarist Forum and Thread Management
 IT20653590
 
-📌Bandara S.M.D.S
-IT20653286
-
-📌Sooriyabandara H.M.T.S
+📌Sooriyabandara H.M.T.S - Blog Post Management
 IT20651510
 
-📌Thilakarathna S.A.Y.R
+📌Thilakarathna S.A.Y.R - Trip Plan Management
 IT20637378
+
+📌Bandara S.M.D.S - Accomadation Management
+IT20653286
+
 
 
 
